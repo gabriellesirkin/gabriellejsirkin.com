@@ -98,11 +98,11 @@ footer { padding: 36px var(--side); text-align: center; }
 <body>
 
 <nav>
-  <a href="gabrielle-sirkin-portfolio.html" class="nav-brand">
+  <a href="index.html" class="nav-brand">
     <span class="nav-name">Gabrielle J. Sirkin</span>
   </a>
   <ul class="nav-links">
-    <li><a href="gabrielle-sirkin-portfolio.html">Work</a></li>
+    <li><a href="index.html">Work</a></li>
     <li><a href="productions.html">Productions</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
@@ -190,7 +190,7 @@ function getParams() {
   var p      = projects[id];
 
   // Back link — returns to portfolio with the right filter active
-  var backUrl = 'gabrielle-sirkin-portfolio.html' + (filter !== 'all' ? '#?filter=' + filter : '');
+  var backUrl = 'index.html' + (filter !== 'all' ? '#?filter=' + filter : '');
   document.getElementById('backLink').href = backUrl;
 
   if (!p) { document.getElementById('pTitle').textContent = 'Project not found'; return; }
