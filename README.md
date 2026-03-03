@@ -33,53 +33,66 @@ npm install
 npm start
 ```
 
-This opens the site at **http://localhost:3000** and automatically reloads the browser whenever you save a file.
+This opens the site at **http://localhost:3000** and automatically reloads the browser whenever you save a file in `src/` or `content/`.
 
-> Note: the site must be run through this local server (not opened directly as a file) because project pages load content from the `content/` folder.
+You can also open the built HTML files directly in your browser (no server needed) — just run `npm run build` once after making changes, then open `index.html`, `about.html`, etc.
 
 ---
 
-## Adding content to a project page
+## Adding or editing a project
 
-Each project can have its own folder of images and an optional text file.
-
-### 1. Create a folder for the project
-
-Inside `content/projects/`, create a folder using the project's ID exactly as it appears in `project.html`. For example:
+Every project lives in its own folder inside `content/projects/`. Each folder contains an `index.md` file that holds all the project's information and images.
 
 ```
-content/
-  projects/
-    expedia-one-key-launch/
-      index.md
-      hero.jpg
-      detail-1.jpg
-      detail-2.jpg
+content/projects/
+  expedia-one-key-launch/
+    index.md        ← all metadata + images for this project
+    hero.jpg
+    detail-1.jpg
 ```
 
-### 2. Write the content file
-
-Create a file called `index.md` inside that folder. Here's the format:
+### The index.md format
 
 ```
 ---
+title: One Key Launch
+client: Expedia
+cat: Brand Work
+filter: brand
 photographer: Ronan Gallagher
+date: June 2023
+skills: Visual Direction, Production
+card_ratio: r-16-9
+card_placeholder: Egypt · Mallorca · Madrid
+placeholder_count: 5
 ---
 
-Write a short description of the project here. This is optional —
-leave it out entirely if you don't want a description.
+Optional description paragraph that appears above the images.
 
 ![](hero.jpg)
 ![](detail-1.jpg)
 ![](detail-2.jpg)
 ```
 
-- The `---` block at the top is optional. Use it to add or override the photographer credit.
-- Images are listed with `![]( )` — put the filename inside the parentheses.
-- Image files go in the same folder as `index.md`.
-- See `content/projects/_template.md` for a blank starting point.
+**Frontmatter fields:**
 
-If a project has no `index.md`, it will show placeholder boxes automatically.
+| Field | Required | Notes |
+|-------|----------|-------|
+| `title` | yes | Project name |
+| `client` | no | Client or publication |
+| `cat` | yes | Display category (`Brand Work`, `Editorial`, `Personal`, `Curation`, `Content Creation`) |
+| `filter` | yes | Filter key (`brand`, `editorial`, `personal`, `curation`, `content`) |
+| `photographer` | no | Photographer credit |
+| `date` | no | Month and year |
+| `skills` | yes | Comma-separated list |
+| `card_ratio` | no | Card aspect ratio (`r-16-9`, `r-4-3`, `r-3-4`) |
+| `card_placeholder` | no | Text shown on the card while image is empty |
+| `placeholder_count` | no | Number of placeholder boxes to show when no images are added yet |
+| `coming_soon` | no | Set to `true` to add a Coming Soon badge |
+
+- Copy `content/projects/_template.md` as a starting point.
+- Images go in the same folder as `index.md`.
+- If a project has no body content, placeholder boxes are shown automatically.
 
 ---
 
@@ -92,6 +105,45 @@ git add .
 git commit -m "describe what you changed"
 git push
 ```
+
+---
+
+## Editing global settings
+
+Site-wide values live in `content/settings.md`:
+
+```
+---
+site_title: Gabrielle J. Sirkin
+site_description: Visual Director and photographer based in Los Angeles.
+site_url: https://gabriellesirkin.github.io/gabriellejsirkin.com
+sharecard_url: https://gabriellesirkin.github.io/gabriellejsirkin.com/sharecard.jpg
+footer_year: 2026
+nav:
+  - Work|index.html
+  - Productions|productions.html
+  - About|about.html
+---
+```
+
+To add or remove a nav link, edit the `nav:` list. Each line is `Label|page.html`.
+
+---
+
+## Editing homepage text
+
+The text on the homepage hero is in `content/pages/home.md`:
+
+```
+---
+hero_main: Visual Director in Los&nbsp;Angeles.
+hero_accent: Directing vision and shaping stories globally.
+---
+```
+
+The filter bar and project grid are generated automatically — no editing needed.
+
+After saving any content file, run `npm run build` (or restart `npm start`) for the changes to appear.
 
 ---
 

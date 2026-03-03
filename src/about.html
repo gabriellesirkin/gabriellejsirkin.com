@@ -3,38 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Gabrielle J. Sirkin</title>
+<title>About — {{SETTING:site_title}}</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="Visual Director and photographer based in Los Angeles.">
-<meta property="og:title" content="About — Gabrielle J. Sirkin">
-<meta property="og:description" content="Visual Director and photographer based in Los Angeles.">
-<meta property="og:image" content="https://gabriellesirkin.github.io/gabriellejsirkin.com/sharecard.jpg">
-<meta property="og:url" content="https://gabriellesirkin.github.io/gabriellejsirkin.com/about.html">
+<meta name="description" content="{{SETTING:site_description}}">
+<meta property="og:title" content="About — {{SETTING:site_title}}">
+<meta property="og:description" content="{{SETTING:site_description}}">
+<meta property="og:image" content="{{SETTING:sharecard_url}}">
+<meta property="og:url" content="{{SETTING:site_url}}/about.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About — Gabrielle J. Sirkin">
-<meta name="twitter:description" content="Visual Director and photographer based in Los Angeles.">
-<meta name="twitter:image" content="https://gabriellesirkin.github.io/gabriellejsirkin.com/sharecard.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
-
+<meta name="twitter:title" content="About — {{SETTING:site_title}}">
+<meta name="twitter:description" content="{{SETTING:site_description}}">
+<meta name="twitter:image" content="{{SETTING:sharecard_url}}">
+<!-- #include _head.html -->
 <link rel="stylesheet" href="assets/css/about.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-brand">
-    <span class="nav-name">Gabrielle J. Sirkin</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Work</a></li>
-    <li><a href="productions.html">Productions</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-</nav>
-
+<!-- #include _nav.html -->
 
 <div class="about-page">
 
@@ -98,8 +84,7 @@
 
 </div>
 
-<footer><span class="fc">© 2026</span></footer>
-
+<!-- #include _footer.html -->
 
 <script src="assets/js/site.js"></script>
 </body>

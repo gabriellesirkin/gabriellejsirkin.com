@@ -1,0 +1,39 @@
+/* DESIGN TOKENS */
+:root {
+  --warm-white: #FAF8F5;
+  --cream: #F0EDE8;
+  --charcoal: #1A1A18;
+  --mid-gray: #8A8680;
+  --light-gray: #D4D0CA;
+  --accent: #C8A882;
+  --accent-dark: #9E7D5A;
+  --skill-bg: #EDEAE4;
+}
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--warm-white);
+  color: var(--charcoal);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px var(--side);
+  background: var(--warm-white);
+}
+.nav-brand { text-decoration: none; }
+.nav-name { font-size: 16px; font-weight: 400; letter-spacing: 0; color: var(--charcoal); display: block; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-size: 14px; font-weight: 400; color: var(--mid-gray); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--charcoal); }
+
+/* FOOTER */
+footer { padding: 36px var(--side); text-align: center; }
+.fc { font-size: 13px; font-weight: 300; color: var(--light-gray); }

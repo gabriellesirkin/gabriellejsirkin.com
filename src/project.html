@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project — {{SETTING:site_title}}</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:image" content="{{SETTING:sharecard_url}}">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{SETTING:sharecard_url}}">
+<!-- #include _head.html -->
+<link rel="stylesheet" href="assets/css/project.css">
+</head>
+<body>
+
+<!-- #include _nav.html -->
+
+<div class="back-wrap">
+  <a href="#" id="backLink" class="back">← Back to Work</a>
+</div>
+
+<div class="project-header">
+  <div>
+    <p class="project-cat" id="pCat"></p>
+    <h1 class="project-title" id="pTitle"></h1>
+  </div>
+  <div class="project-meta" id="pMeta"></div>
+</div>
+
+<div class="project-desc" id="pDesc" style="display:none"></div>
+
+<div class="project-images" id="pImages">
+  <!-- populated by project.js -->
+</div>
+
+<!-- #include _footer.html -->
+
+<script>
+var projects = <!-- #projects-data -->;
+</script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/project.js"></script>
+</body>
+</html>

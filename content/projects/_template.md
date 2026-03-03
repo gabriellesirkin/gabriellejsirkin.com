@@ -1,11 +1,18 @@
 ---
-description: A short description of this project (optional).
-photographer: Photographer Name (optional — overrides the default)
+title: Project Title
+client: Client Name
+cat: Brand Work
+filter: brand
+photographer: Photographer Name
+date: Month Year
+skills: Visual Direction, Production
+card_ratio: r-16-9
+card_placeholder: Short location or description shown on the card
+placeholder_count: 5
 ---
 
-Any text you write here appears as a description above the images.
-You can write as much or as little as you want.
+Optional description paragraph above the images.
 
-![Alt text for the image — can be left blank](your-image.jpg)
-![](another-image.jpg)
-![](third-image.jpg)
+![](image1.jpg)
+![](image2.jpg)
+![](image3.jpg)

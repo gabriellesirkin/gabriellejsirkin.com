@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{SETTING:site_title}}</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="{{SETTING:site_description}}">
+<meta property="og:title" content="{{SETTING:site_title}}">
+<meta property="og:description" content="{{SETTING:site_description}}">
+<meta property="og:image" content="{{SETTING:sharecard_url}}">
+<meta property="og:url" content="{{SETTING:site_url}}/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{SETTING:site_title}}">
+<meta name="twitter:description" content="{{SETTING:site_description}}">
+<meta name="twitter:image" content="{{SETTING:sharecard_url}}">
+<!-- #include _head.html -->
+<link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+
+<!-- #include _nav.html -->
+
+<section class="hero">
+  <h1 class="hero-title">{{SETTING:hero_main}}<br><span class="hero-accent">{{SETTING:hero_accent}}</span></h1>
+</section>
+
+<div class="filter-wrap">
+  <div class="filter-bar" id="filterBar">
+<!-- #filter-bar -->
+  </div>
+</div>
+
+<div class="grid-wrap">
+  <div class="grid" id="grid">
+<!-- #projects-cards -->
+  </div>
+</div>
+
+<!-- #include _footer.html -->
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/index.js"></script>
+</body>
+</html>
