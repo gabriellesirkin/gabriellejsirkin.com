@@ -6,6 +6,6 @@ sharecard_url: https://gabriellesirkin.github.io/gabriellejsirkin.com/sharecard.
 footer_year: 2026
 nav:
   - Work|index.html
-  - Productions|productions.html
+  - Clients|productions.html
   - About|about.html
 ---
