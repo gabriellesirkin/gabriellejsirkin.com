@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project — Gabrielle J. Sirkin</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:image" content="https://gabriellesirkin.github.io/gabriellejsirkin.com/sharecard.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gabriellesirkin.github.io/gabriellejsirkin.com/sharecard.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
@@ -90,6 +95,21 @@ nav {
 .proj-img.r23   { aspect-ratio: 2/3; }
 .proj-img.r11   { aspect-ratio: 1/1; }
 
+/* MARKDOWN CONTENT */
+.project-desc {
+  padding: 40px var(--side) 0;
+  max-width: 1440px; margin: 0 auto;
+}
+.project-desc p {
+  font-size: 16px; font-weight: 300; color: var(--mid-gray);
+  line-height: 1.7; max-width: 640px;
+}
+.project-images img {
+  width: 100%; height: auto; display: block;
+  grid-column: 1/-1;
+}
+.project-images p { display: contents; }
+
 /* FOOTER */
 footer { padding: 36px var(--side); text-align: center; }
 .fc { font-size: 13px; font-weight: 300; color: var(--light-gray); }
@@ -119,6 +139,8 @@ footer { padding: 36px var(--side); text-align: center; }
   </div>
   <div class="project-meta" id="pMeta"></div>
 </div>
+
+<div class="project-desc" id="pDesc" style="display:none"></div>
 
 <div class="project-images" id="pImages">
   <!-- populated by JS -->
@@ -196,6 +218,8 @@ function getParams() {
   if (!p) { document.getElementById('pTitle').textContent = 'Project not found'; return; }
 
   document.title = p.title + ' — Gabrielle J. Sirkin';
+  document.querySelector('meta[property="og:title"]') && (document.querySelector('meta[property="og:title"]').content = p.title + ' — Gabrielle J. Sirkin');
+  document.querySelector('meta[name="twitter:title"]') && (document.querySelector('meta[name="twitter:title"]').content = p.title + ' — Gabrielle J. Sirkin');
   document.getElementById('pCat').textContent = p.cat;
   document.getElementById('pTitle').textContent = p.client + ' — ' + p.title;
 
@@ -227,7 +251,52 @@ function getParams() {
 
   document.getElementById('pMeta').innerHTML = meta;
 
-  // Images
+  // Try to load markdown content; fall back to placeholder divs
+  var mdUrl = 'content/projects/' + id + '/index.md';
+  fetch(mdUrl)
+    .then(function(r) { return r.ok ? r.text() : null; })
+    .then(function(text) {
+      if (!text) { renderPlaceholders(p); return; }
+
+      // Parse optional frontmatter (--- key: value --- block)
+      var fm = {}, body = text;
+      var fmMatch = text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+      if (fmMatch) {
+        fmMatch[1].split('\n').forEach(function(line) {
+          var kv = line.match(/^(\w+):\s*(.+)$/);
+          if (kv) fm[kv[1].trim()] = kv[2].trim();
+        });
+        body = fmMatch[2];
+      }
+
+      // Split description text from images
+      var lines = body.split('\n');
+      var descLines = [], imgLines = [];
+      lines.forEach(function(l) {
+        if (/!\[.*\]\(/.test(l)) imgLines.push(l);
+        else descLines.push(l);
+      });
+
+      var desc = descLines.join('\n').trim();
+      if (desc) {
+        var descEl = document.getElementById('pDesc');
+        descEl.innerHTML = marked.parse(desc);
+        descEl.style.display = '';
+      }
+
+      // Fix relative image paths to point at the project folder
+      var imgMd = imgLines.join('\n');
+      var baseUrl = 'content/projects/' + id + '/';
+      var imgHtml = marked.parse(imgMd).replace(
+        /(<img[^>]+src=")(?!https?:\/\/|\/|data:)/g,
+        '$1' + baseUrl
+      );
+      document.getElementById('pImages').innerHTML = imgHtml;
+    })
+    .catch(function() { renderPlaceholders(p); });
+})();
+
+function renderPlaceholders(p) {
   var imgHtml = '';
   for (var i = 0; i < p.images.length; i++) {
     var img = p.images[i];
@@ -235,7 +304,8 @@ function getParams() {
     imgHtml += '<div class="' + cls + '">Image ' + (i+1) + '</div>';
   }
   document.getElementById('pImages').innerHTML = imgHtml;
-})();
+}
 </script>
+<script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
 </body>
 </html>
