@@ -51,6 +51,9 @@ media:
   - file: 000149970035_retouched.jpg
     caption: ''
     bts: false
+  - file: 000149970011_VSCO.jpg
+    caption: ''
+    bts: false
   - file: 000149980030.jpg
     caption: ''
     bts: false
