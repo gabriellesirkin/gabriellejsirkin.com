@@ -25,12 +25,13 @@ services:
   - Trip Creation and Planning
   - Personalized Digital Guidebooks
 clients:
-  - Emerging Hospitality and Travel Brands
+  - Hospitality and Travel Brands
   - Hotel and Hospitality Groups
+  - Travel Tech Brands
   - Travel Advisors
   - Tourism Boards and Organizations
   - Creative Agencies
-  - + More
+  - and More
 city_guides_label: Travel Guides
 city_guides_intro: After years of building travel itineraries and happily getting lost in cities around the world, we started keeping notes. These are the maps we wish we'd had, for the curious traveler who isn't looking for anything in particular and somehow always finds the best thing in the room. Each guide includes our favorite restaurants, hotels, bars, beaches, shops, museums, galleries, and the kind of places that don't have a category but you'll be glad you went.
 cities:
@@ -40,7 +41,7 @@ cities:
   - <a href="https://gabriellejsirkin.recleague.com/collections/marseille-travel-guide" target="_blank">Marseille</a>
   - <a href="https://gabriellejsirkin.recleague.com/collections/new-york-city-travel-guide-f912" target="_blank">New York City</a>
   - Venice
-  - Palermo
+  - <a href="https://gabriellejsirkin.recleague.com/collections/palermo-travel-guide?lyr_campaign=share&lyr_source=link&lyr_s=NjI2Nzc" target="_blank">Palermo</a>
   - Prague
   - French Basque Region
   - Copenhagen
