@@ -46,7 +46,7 @@ cities:
   - French Basque Region
   - Copenhagen
   - Barcelona
-  - Isle of Skye
+  - <a href="https://gabriellejsirkin.recleague.com/collections/isle-of-skye-travel-guide?lyr_campaign=share&lyr_source=link&lyr_s=NjI2Nzc" target="_blank">Isle of Skye</a>
   - <a href="https://gabriellejsirkin.recleague.com/collections/mexico-city-travel-guide" target="_blank">Mexico City</a>
   - Baja, Mexico
   - Northern California
