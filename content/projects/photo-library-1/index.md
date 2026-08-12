@@ -20,7 +20,7 @@ coming_soon: false
 color_theme: colorway-1
 thumbnail: 1187938527-NO-AI-USE-EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2566_V03_FNL.jpg
 media:
-  - file: 1187938527-NO-AI-USE-EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2566_V03_FNL-1.jpg
+  - file: 1187938527-NO-AI-USE-EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2566_V03_FNL.jpg
     caption: ''
     bts: false
   - file: Group 1.jpg
