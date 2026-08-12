@@ -19,5 +19,29 @@ skills: []
 coming_soon: false
 color_theme: colorway-1
 thumbnail: 1187938527-NO-AI-USE-EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2566_V03_FNL.jpg
-media: []
+media:
+  - file: 1187938527-NO-AI-USE-EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2566_V03_FNL-1.jpg
+    caption: ''
+    bts: false
+  - file: Group 1.jpg
+    caption: ''
+    bts: false
+  - file: Group 3.jpg
+    caption: ''
+    bts: false
+  - file: EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2830_V03_QC_FNL.jpg
+    caption: ''
+    bts: false
+  - file: EGC00001_Corp_Partner _LA_The_Hoxton_FrontDesk_Lobby_Torchia_0197_V06_QC_FNL.jpg
+    caption: ''
+    bts: false
+  - file: EGC00001_Corp_Partner _LA_The_Hoxton_FrontDesk_Lobby_Torchia_1039_V06_QC_FNL.jpg
+    caption: ''
+    bts: false
+  - file: EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2517_V04_QC_FNL.jpg
+    caption: ''
+    bts: false
+  - file: Group 4.jpg
+    caption: ''
+    bts: false
 ---
