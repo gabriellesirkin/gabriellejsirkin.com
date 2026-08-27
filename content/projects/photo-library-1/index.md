@@ -23,10 +23,10 @@ media:
   - file: 1187938527-NO-AI-USE-EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2566_V03_FNL.jpg
     caption: ''
     bts: false
-  - file: Group 1-1.jpg
+  - file: Group_21.png
     caption: ''
     bts: false
-  - file: Group 3.jpg
+  - file: Group_31.png
     caption: ''
     bts: false
   - file: EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2830_V03_QC_FNL.jpg
@@ -41,7 +41,7 @@ media:
   - file: EGC00001_Corp_Partner _LA_The_Hoxton_Room_Torchia_2517_V04_QC_FNL.jpg
     caption: ''
     bts: false
-  - file: Group 4.jpg
+  - file: Group_41.png
     caption: ''
     bts: false
 ---
